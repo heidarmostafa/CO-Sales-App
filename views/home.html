@@ -1,0 +1,78 @@
+<section id="home-view">
+    <div class="grid-stack" ng-charts>
+        <div ng-show="$parent.showLastYearData" class="grid-stack-item" 
+             data-gs-x="0" data-gs-y="0" 
+             data-gs-auto-position 
+             data-gs-min-width="3" 
+             data-gs-min-height="3" 
+             data-gs-width="12" data-gs-height="3">
+            <div class="grid-stack-item-content"></div>
+            <div class="salesChart" id="lastYearDataChart"></div>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs reload-btn" ng-click="reloadLastYearData()"><i class="fa fa-refresh"></i> reload</a>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs close-btn" ng-click="closeLastYearChart()"><i class="fa fa-times"></i> close</a>
+            <div class="loader-container" ng-show="loadingLastYearChart">
+                <img src="images/charts-loader.gif" alt="loader" />
+            </div>
+        </div>
+        <div ng-show="$parent.showSalesmanData" class="grid-stack-item" 
+             data-gs-x="0" data-gs-y="0" 
+             data-gs-min-width="3" 
+             data-gs-auto-position 
+             data-gs-min-height="3" 
+             data-gs-width="4" data-gs-height="3">
+            <div class="grid-stack-item-content"></div>
+            <div class="salesChart" id="salesmanDataChart"></div>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs reload-btn" ng-click="reloadSalesmanData()"><i class="fa fa-refresh"></i> reload</a>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs close-btn" ng-click="closeSalesmanChart()"><i class="fa fa-times"></i> close</a>
+            <div class="loader-container" ng-show="loadingSalesmanChart">
+                <img src="images/charts-loader.gif" alt="loader" />
+            </div>
+        </div>
+        <div ng-show="$parent.showTopSalesOrdersData" class="grid-stack-item" 
+             data-gs-x="4" data-gs-y="0" 
+             data-gs-min-width="3" 
+             data-gs-auto-position 
+             data-gs-min-height="3" 
+             data-gs-width="4" data-gs-height="3">
+            <div class="grid-stack-item-content"></div>
+            <span class="highcharts-title block-title" style="">Top 5 Sales Orders</span>
+            <span class="highcharts-subtitle block-subtitle">list for top 5 sales orders in amount</span>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>name</th>
+                        <th>value</th>
+                        <th>qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="salesOrder in topSalesOrdersData | orderBy:'-value'">
+                        <th scope="row">{{salesOrder.orderNum}}</th>
+                        <td>{{salesOrder.userName}}</td>
+                        <td>{{salesOrder.value}}</td>
+                        <td>{{salesOrder.qty}}</td>
+                    </tr>
+            </table>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs reload-btn" ng-click="reloadTopSalesOrdersData()"><i class="fa fa-refresh"></i> reload</a>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs close-btn" ng-click="closetopSalesOrdersChart()"><i class="fa fa-times"></i> close</a>
+            <div class="loader-container" ng-show="loadingTopSalesOrdersChart">
+                <img src="images/charts-loader.gif" alt="loader" />
+            </div>
+        </div>
+        <div ng-show="$parent.showTopSalesmenData" class="grid-stack-item" 
+             data-gs-x="8" data-gs-y="0" 
+             data-gs-min-width="3" 
+             data-gs-auto-position 
+             data-gs-min-height="3" 
+             data-gs-width="4" data-gs-height="3">
+            <div class="grid-stack-item-content"></div>
+            <div class="salesChart" id="topSalesmanDataChart"></div>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs reload-btn" ng-click="reloadTopSalesmenData()"><i class="fa fa-refresh"></i> reload</a>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs close-btn" ng-click="closetopSalesmanChart()"><i class="fa fa-times"></i> close</a>
+            <div class="loader-container" ng-show="loadingTopSalesmanChart">
+                <img src="images/charts-loader.gif" alt="loader" />
+            </div>
+        </div>
+    </div>
+</section>

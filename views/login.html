@@ -1,0 +1,17 @@
+<section id="login-view">
+    <img ng-src="images/logo.png" />
+    <form ng-submit="login()">
+        <div id="login-error" class="alert alert-danger collapse" role="alert">
+            {{loginErrorMessage}}
+        </div>
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input name="username" id="username" type="text" class="form-control" placeholder="Enter User Name" ng-model="username" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" class="form-control" placeholder="Enter Password" ng-model="password" />
+        </div>
+        <button class="btn btn-default" type="submit">Login <img class="loader" ng-show="loginLoading" src="images/loader.gif" alt=""/></button>
+    </form>
+</section>

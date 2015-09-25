@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="salesApp">
+    <head>
+        <title>Sales Management System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/gridstack.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body ng-controller="mainController" class="ng-cloak">
+        <header ng-show="showHeader">
+            <div class="container">
+                <img id="logo" src="images/logo-icon.png" alt="crossover logo" />
+                <p class="hidden-xs">CROSS|OVER SALES MANAGEMENT SYSTEM</p>
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:void(0)" ng-click="showSalesmanData = !showSalesmanData"><i ng-hide="showSalesmanData" class="fa fa-times"></i><i ng-show="showSalesmanData" class="fa fa-check"></i> Total Sales For Each Salesman</a></li>
+                        <li><a href="javascript:void(0)" ng-click="showTopSalesOrdersData = !showTopSalesOrdersData"><i ng-hide="showTopSalesOrdersData" class="fa fa-times"></i><i ng-show="showTopSalesOrdersData" class="fa fa-check"></i> Top 5 Sales Orders</a></li>
+                        <li><a href="javascript:void(0)" ng-click="showTopSalesmenData = !showTopSalesmenData"><i ng-hide="showTopSalesmenData" class="fa fa-times"></i><i ng-show="showTopSalesmenData" class="fa fa-check"></i> Top 5 Sales Men</a></li>
+                        <li><a href="javascript:void(0)" ng-click="showLastYearData = !showLastYearData"><i ng-hide="showLastYearData" class="fa fa-times"></i><i ng-show="showLastYearData" class="fa fa-check"></i> Total Sales Per Month</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-xs btn-default" ng-click="logout()"><i class="fa fa-sign-out"></i> logout</button>
+                <span>
+                    <i class="fa fa-user"></i> Welcome  
+                    <span>{{username}}</span>
+                </span>
+            </div>
+        </header>
+        <div class="container">
+            <div ng-view></div>
+        </div>
+        <footer>
+            <div class="container">
+                <ul>
+                    <li>
+                        <a ng-click="privacyPolicyData()" href="javascript:void(0)" data-toggle="modal" data-target="#footerData">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a ng-click="termsData()" href="javascript:void(0)" data-toggle="modal" data-target="#footerData">Terms of Use</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-toggle="modal" data-target="#supportForm">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <div class="modal fade" id="footerData" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{{footerData.title}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        {{footerData.data}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="supportForm" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div id="message-notification" class="alert alert-success collapse" role="alert">
+                                Request is sent successfully
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input name="subject" id="subject" type="text" class="form-control" placeholder="Enter Subject" />
+                            </div>
+                            <div class="form-group">
+                                <label for="details">Details</label>
+                                <textarea name="details" id="details" class="form-control" placeholder="Enter Password"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="sendMessage()">Send</button>
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--libraries-->
+        <script src="js/lib/jquery-1.11.2.min.js" type="text/javascript"></script>
+        <script src="js/lib/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/lib/lodash.min.js" type="text/javascript"></script>
+        <script src="js/lib/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/lib/gridstack.min.js" type="text/javascript"></script>
+        <script src="js/lib/highcharts.js" type="text/javascript"></script>
+
+        <!--angular and modules-->
+        <script src="js/lib/angular.min.js" type="text/javascript"></script>
+        <script src="js/lib/angular-route.min.js" type="text/javascript"></script>
+
+        <!--app.js-->
+        <script src="js/app.js" type="text/javascript"></script>
+
+        <!--controllers-->
+        <script src="js/controllers/mainController.js" type="text/javascript"></script>
+        <script src="js/controllers/loginController.js" type="text/javascript"></script>
+        <script src="js/controllers/homeController.js" type="text/javascript"></script>
+
+        <!--services-->
+        <script src="js/services/configuration.js" type="text/javascript"></script>
+        <script src="js/services/salesmanData.js" type="text/javascript"></script>
+        <script src="js/services/lastYearData.js" type="text/javascript"></script>
+        <script src="js/services/topSalesOrdersData.js" type="text/javascript"></script>
+        <script src="js/services/topSalesmenData.js" type="text/javascript"></script>
+    </body>
+</html>

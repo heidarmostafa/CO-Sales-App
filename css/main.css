@@ -1,0 +1,210 @@
+/* general style rules*/
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+    background: #ede8df;
+    font-size:13px;
+}
+.loader-container {
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background:rgba(255,255,255,0.5);
+    text-align: center;
+}
+.loader-container img {
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/*charts*/
+.grid-stack-item {
+    padding-bottom: 50px !important;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    border:none !important;
+    border-right: 1px solid #eee!important;
+    border-bottom: 1px solid #eee!important;
+    margin-bottom: 25px;
+    border-radius: 0;
+    background:#fff;
+}
+.grid-stack-item:before {
+    transition:all 0.2s ease-in-out;
+    content:"\f047";
+    background: #e0d7c6;
+    border-bottom: 1px solid #dee2e8;
+    font-family: FontAwesome;
+    display:block;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align: left;
+    padding-left:10px;
+    opacity: 0;
+}
+.grid-stack-item:hover:before {
+    opacity: 1;
+}
+.grid-stack-item .btn {
+    transition:all 0.2s ease-in-out;
+    opacity: 0;
+    float:left;
+    position: absolute;
+    top: 4px;
+    right:10px;
+}
+.grid-stack-item .close-btn {
+    right: 10px;
+}
+.grid-stack-item .reload-btn {
+    right: 62px;
+}
+.grid-stack-item:hover .btn {
+    opacity: 1;
+}
+.grid-stack-placeholder {
+    background-color:rgba(255,255,255,0.5);
+}
+.grid-stack-placeholder:before {
+    display:none;
+}
+.preview-holder {
+    background:green !important;
+}
+.salesChart{
+    width:100%;
+    height:100%;
+}
+.fix-width {
+    width:100% !important;
+}
+.block-title, .block-subtitle {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+    color:#333333;
+    display: block;
+    text-align:center;
+    font-size:18px;
+}
+.block-subtitle {
+    font-size:12px;
+    color:#555555;
+}
+
+/*login view*/
+#login-view {
+    max-width:500px;
+    margin:100px auto;
+    background:#fff;
+    text-align: center;
+    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+}
+#login-view img {
+    max-width:100%;
+}
+#login-view form {
+    text-align: left;
+    padding:20px;
+}
+#login-view .btn {
+    display:block;
+    margin:0 auto;
+}
+.btn-default {
+    background:#5a4a42;
+    color:#fff;
+    transition: all 0.3s ease-in-out;
+    border:none;
+}
+.btn-default:hover {
+    background: #c2b59b;
+}
+.loader {
+    height:20px;
+}
+
+/*header*/
+header {
+    background:#fff;
+    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    line-height: 21px;
+}
+header img {
+    height:50px;
+    margin:10px;
+}
+header p {
+    display: inline;
+    position: relative;
+    top:3px;
+}
+.btn-group.open .dropdown-toggle {
+    -webkit-box-shadow : none;
+    box-shadow : none;
+}
+header>div>div .dropdown-toggle {
+    background:none;
+    transition: all 0.3s ease-in-out;
+}
+header>div>div .dropdown-toggle:hover {
+    color:#c2b59b;
+}
+header>div>span, header>div>button, header>div>div {
+    margin: 25px 0px;
+    float:right;
+}
+header>div>span, header>div>button {
+    margin-right:10px;
+}
+header>div>span span {
+    font-weight:bold;
+}
+
+/*footer*/
+footer {
+    background:#fff;
+    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    line-height: 21px; 
+
+}
+footer ul {
+    display:block;
+    text-align:center;
+    margin:20px;
+    padding: 0;
+}
+footer ul li {
+    list-style: none;
+    display:inline-block;
+    border-right:1px solid #5a4a42;
+    padding:0px 10px;
+}
+footer ul li:last-child {
+    border-right:none;
+}
+footer ul li a{
+    transition: all 0.3s ease-in-out;
+    color:#5a4a42;
+}
+footer ul li a:hover{
+    color:#a99a7c;
+    text-decoration: none;
+}
